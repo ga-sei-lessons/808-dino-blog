@@ -3,7 +3,7 @@ import Comment from './Comment'
 
 class Post extends Component {
     render() {
-        console.log(this)
+        // console.log(this)
         const comments = this.props.comments.map((comment, idx) => {
             return (
                 <Comment 
