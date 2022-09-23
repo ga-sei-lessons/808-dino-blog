@@ -59,16 +59,18 @@ class App extends Component {
     // take the values from the form inputs, and add a new post into the post array
     console.log(this.state)
     this.setState((prevState => {
+      // make a new post from the state values that the usre typed in
+      const newPost = {
+        title: prevState.title,
+        author: prevState.author,
+        body: prevState.body,
+        comments: []
+      }
+
       return {
-        posts: [
-          ...prevState.posts, 
-          {
-            title: prevState.title,
-            author: prevState.author,
-            body: prevState.body,
-            comments: []
-          }
-        ],
+        // combine newPost into a new array with all the old posts
+        posts: [...prevState.posts, newPost],
+        // clear out the form input
         title: '',
         author: '',
         body: ''
